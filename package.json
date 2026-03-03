@@ -1,0 +1,23 @@
+{
+  "name": "cyber-dashboard",
+  "version": "1.0.0",
+  "description": "3D Cybersecurity Dashboard - Phishing Detection & IP Intelligence",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "test-news": "node scripts/test_news.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "multer": "^1.4.5-lts.1",
+    "mailparser": "^3.7.1",
+    "helmet": "^6.0.0",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0",
+    "express-rate-limit": "^6.10.0",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^2.6.7"
+  }
+}

